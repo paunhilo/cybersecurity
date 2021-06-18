@@ -14,21 +14,28 @@ class AuthModele {
 			echo "<h1>probleme access BDD</h1>";
 		}
 	}
-}
-	public function getMaxID() {
-		// recupere l'idmax de l'association qui vient d'être insérée
-		if ($this->idcASS) {
-			$req= "SELECT max(IDASS) as MAXIDASS from association";
-			$resultID = $this->idcASS->query($req)->fetch()->MAXIDASS;
-			return $resultID;
+
+	public function get($i, $p) {
+		if ($this->id) {
+			$req= "SELECT identifiant, password from auth WHERE identifiant = ".$i." AND password = ".$p.";";
+			$auth = $this->id->query($req);
+			return $auth;
 		}
 	}
-	public function getAssociationS() {
-		// recupere TOUTES les Associations de  la BDD
-		if ($this->idcASS) {
-			$req ="SELECT * from association ORDER BY NOMASS ASC;" ;
-			$resultASS = $this->idcASS->query($req);
-			return $resultASS;
+
+	public function getP($p) {
+		if ($this->id) {
+			$req= "SELECT password from auth WHERE password = ".$p.";";
+			$pass = $this->id->query($req)->fetch()->password;
+			return $pass;
+		}
+	}
+
+	public function getI($i) {
+		if ($this->id) {
+			$req= "SELECT identifiant from auth WHERE identifiant = ".$i.";";
+			$id = $this->id->query($req)->fetch()->identifiant;
+			return $id;
 		}
 	}
 }
