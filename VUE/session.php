@@ -2,15 +2,15 @@
 session_start ();
 include ('../Class/autoload.php');
 require_once ('../MODELE/AuthModele.class.php');
+
 $AUTH = new AuthModele();
-echo $_POST ['email'];
-echo $_POST ['password'];
+
 if ((isset ( $_POST ['email'] )) && (isset ( $_POST ['password'] ))) {
-    if (($_POST ['email'] === $AUTH->getI($_POST ['email'])) && ($_POST ['password'] === $AUTH->getP($_POST ['password']))) {
-        echo $AUTH->getI($_POST ['email']);
+    if ($AUTH->getI($_POST ['email']) === ($_POST ['email']) && ($AUTH->getP(md5($_POST ['password'], false)) === md5($_POST ['password'], false))) {
+        
         $_SESSION ['email'] = $_POST ['email'];
         $_SESSION ['password'] = $_POST ['password'];
-        header ('Location:success.html');		
+        header ('Location:success.php');		
     } else {
             header ('Location:index.php');
     }

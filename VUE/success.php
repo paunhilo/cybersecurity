@@ -1,5 +1,4 @@
 <?php
-
 echo '
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,6 +13,6 @@ echo '
         <link href="Style/style.css" rel="stylesheet" />
     </head>
     <div id="main" class="main " role="main">
-        <h1>BRAVO !</BR></h1>
+        <a href="index.php"><h1>BRAVO !</BR></h1></a>
     </div>
 </html>';

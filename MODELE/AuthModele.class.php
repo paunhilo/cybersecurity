@@ -25,7 +25,7 @@ class AuthModele {
 
 	public function getP($p) {
 		if ($this->id) {
-			$req= "SELECT password from auth WHERE password = ".$p.";";
+			$req= "SELECT password from auth WHERE password = '".$p."';";
 			$pass = $this->id->query($req)->fetch()->password;
 			return $pass;
 		}
@@ -33,7 +33,7 @@ class AuthModele {
 
 	public function getI($i) {
 		if ($this->id) {
-			$req= "SELECT identifiant from auth WHERE identifiant = ".$i.";";
+			$req= "SELECT identifiant from auth WHERE identifiant = '".$i."';";
 			$id = $this->id->query($req)->fetch()->identifiant;
 			return $id;
 		}
